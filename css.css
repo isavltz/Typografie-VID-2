@@ -1,0 +1,286 @@
+@font-face {
+  font-family: "ArnoldBoecklin";
+  src: url("fonts/arnold-boecklin-regular.otf") format(otf); 
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 30em;
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url(fonts/Lato-Regular.ttf);
+}
+
+body {
+    margin: 0px;
+}
+
+:root {
+	--page-background: hsl(0, 0%, 100%);
+	--body-color: hsl(0, 0%, 10%);
+	--highlight-color: hsl(0, 0%, 10%);
+	--link-color: hsl(50, 100%, 50%);
+	 /* hoe breed mag een paragraaf zijn */
+	--ratio: 1.414;
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'ArnoldBoecklin';
+}
+
+body {
+	margin: 0;
+	font-size: 1.4rem;
+	background-color: var(--page-background);
+	color: var(--body-color);
+}
+
+body p{
+	font-family: 'Lato';
+}
+
+/* Section 1*/
+
+section:first-child {
+	width: 100%;
+}
+
+section:first-child p{
+	margin: 17em 0em 5em 0em;
+	text-align: center;
+}
+
+/* button:first-of-type{
+	background-color: transparent;
+	
+} */
+
+/* #laser-beam {
+    width: 2px;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    display: none;
+} */
+
+
+/* Section 2 */
+
+section:nth-child(2) {
+	display:flex;
+	background-color: var(--highlight-color);
+	margin-top: 10px;
+	padding:2em;
+	width: 100vw;
+}
+
+section:nth-child(2) p{
+	color: white;
+	padding-right: 70px;
+}
+
+section:nth-child(2) h2{
+	color: white;
+	font-size: 11em;
+	margin: 8px 30px 10px 30px;
+	padding-right: 15px;
+}
+
+
+/* Section 3 */
+
+section:nth-of-type(3){
+	display: flex;
+	padding: 0em 5em 1em 5em;
+	
+}
+
+section:nth-of-type(3)img{
+	margin-left: 50%;
+}
+
+section:nth-of-type(3) h2{
+	padding-top: 110px;
+}
+
+/* Section 4 */
+
+section:nth-of-type(4){
+	margin-right: 20em;
+	margin-left: 20em;
+}
+
+.space{
+	margin-left:20px;
+}
+
+section:nth-of-type(4) h2{
+	padding-top: 50px;;
+}
+
+section:nth-of-type(4) p{
+ margin-top: 40px;
+ margin-bottom: 40px;
+}
+
+
+/* Section 5 */
+
+section:nth-of-type(5){
+	background-color: var(--highlight-color);
+	margin-top: 100px;
+	padding: 2em;
+	display: flex;
+	
+}
+
+section:nth-of-type(5) p{
+	color: white;
+	margin-left: 80px;
+	margin-right: 40px;
+}
+
+section:nth-of-type(5) h3{
+	color: white;
+	margin-left: 80px;
+}
+
+
+
+
+/* Section 6 */
+
+section:nth-of-type(6){
+	padding:80px;
+}
+
+/* Beeld*/
+
+img {
+	width:auto;
+	height: 40vh;
+}
+
+.scaled-img{
+	margin-top: 4em;
+}
+
+.flexbox{
+	display: flex;
+}
+
+.end{
+	text-align: center;
+	margin-top: 150px;
+}
+
+.font-sample {
+    text-align: center;
+    padding: 20px;
+}
+
+.alphabet {
+    font-size: 80px;
+    letter-spacing: 4px; /* Spatiëring tussen de letters aanpassen */
+    margin: 10px 0;
+}
+
+
+
+/* LAYOUT */
+
+:where(main, figcaption) > * {
+	max-width: calc(var(--fold) * 1rem);
+	width: 100%;
+	margin: 0 auto 1rem;
+	grid-column-start: 2;
+}
+
+
+/* DEFAULT INLINE STYLES */
+a {
+	color: black;
+}
+
+a:hover {
+	background: var(--link-color);
+	color: var(--highlight-color);
+}
+
+abbr {
+	font-variant: all-small-caps;
+}
+
+
+/* Lettertypes */
+
+h1 {
+	font-size: clamp(2em,10vw,5em);
+	line-height: 1; 
+	color: var(--highlight-color);
+}
+
+h2 {
+	font-size: calc( var(--ratio) *  var(--ratio) * var(--ratio) * 1rem );
+	line-height: 1; /* lager cijfer als het font groter is. */
+	font-weight: normal; /* bold, normal */
+	color: var(--highlight-color);
+	margin-top: 2rem;
+}
+
+h3 {
+	font-size: calc( var(--ratio) * var(--ratio) * 1rem );
+	font-weight: normal; /* bold, normal */
+}
+
+figcaption{
+	font-family: "lato";
+	font-size: .7em;
+}
+
+
+/* Responsive */
+
+ @media (min-width: 1400px){
+	:root {
+		--fold: 80;
+	}
+
+	section:first-child h1{
+		font-size: 10em;
+		margin-top: .5em;
+	}
+}
+
+/* animatie */
+
+#container {
+    margin: auto;
+    height: 80pt;
+    top: 0;
+    bottom: 0;
+
+    filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+    position: absolute;
+    width: 100%;
+    display:inline-block;
+
+    font-family: "arnoldBoecklin";
+    font-size: 400pt;
+	margin-left: -260px;
+
+    text-align: center;
+    user-select: none;
+}
+
